@@ -193,7 +193,7 @@ void printBoard(char** board) {
 
 // clear board displayed on screen
 void clearBoard(char** board, int px, int py, pair<int, int> fc) {
-	PlaySound(TEXT("clear.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//	PlaySound(TEXT("clear.wav"), NULL, SND_FILENAME | SND_ASYNC);
 	if (board[px][py] != ' ') {
 		int tx = px;
 		int ty = py;
@@ -238,7 +238,7 @@ void getBoardBackground() {
 			background[i] = background[i] + " ";
 			++dem;
 		}
-		w_back = max(w_back, background[i].size());
+		w_back = max(w_back, (int)background[i].size());
 	}
 	fin.close();
 }

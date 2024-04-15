@@ -136,7 +136,7 @@ void tracing(pair<int, int> tar, pair<int, int> fc, int dir, int change) {
 int checkMatching(pair<int, int> fc, pair<int, int> sc, bool edit) {
 	if ((!validPos(fc) || !validPos(sc) || board[fc.F][fc.S] == ' ' || board[sc.F][sc.S] == ' ' || board[fc.F][fc.S] != board[sc.F][sc.S])) {
 		if (edit) {
-			PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			invalidBox(fc.F, fc.S, board);
 			invalidBox(sc.F, sc.S, board);
 			Sleep(500);
@@ -197,7 +197,7 @@ int checkMatching(pair<int, int> fc, pair<int, int> sc, bool edit) {
 		}
 	}
 	if (edit) {
-		PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//		PlaySound(TEXT("error.wav"), NULL, SND_FILENAME | SND_ASYNC);
 		invalidBox(fc.F, fc.S, board);
 		invalidBox(sc.F, sc.S, board);
 		Sleep(500);
@@ -240,22 +240,22 @@ bool Input(int mode) {
 		int ch = _getch();
 		switch (ch) {
 		case KEY_UP:
-			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			normalBox(px, py, fc, board);
 			px = max(1, px - 1);
 			break;
 		case KEY_DOWN:
-			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			normalBox(px, py, fc, board);
 			px = min(BOARD_HEIGHT, px + 1);
 			break;
 		case KEY_LEFT:
-			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			normalBox(px, py, fc, board);
 			py = max(1, py - 1);
 			break;
 		case KEY_RIGHT:
-			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			normalBox(px, py, fc, board);
 			py = min(BOARD_WIDTH, py + 1);
 			break;
@@ -314,7 +314,7 @@ bool Input(int mode) {
 			return false;
 			break;
 		case KEY_ENTER:
-			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("move2.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			if (board[px][py] != ' ') { // check if box is not empty
 				if (fc.F == 0) { // first chosen box
 					fc = { px, py };
@@ -335,7 +335,7 @@ bool Input(int mode) {
 							normalBox(sc.F, sc.S, fc, board);
 						}
 						else { //valid
-							PlaySound(TEXT("ting.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//							PlaySound(TEXT("ting.wav"), NULL, SND_FILENAME | SND_ASYNC);
 							drawPath(false, path);
 							validBox(fc.F, fc.S, board);
 							validBox(sc.F, sc.S, board);
@@ -410,7 +410,7 @@ void startGame(Node* plPlay, Node* plHead, int option, string options[], int col
 	px = py = 1;
 	board = setupBoard();
 	system("cls");
-	PlaySound(TEXT("board.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//	PlaySound(TEXT("board.wav"), NULL, SND_FILENAME | SND_ASYNC);
 	drawBackground();
 	printBoard(board);
 	highlightBox(px, py, board);
@@ -452,7 +452,7 @@ void startGame(Node* plPlay, Node* plHead, int option, string options[], int col
 			system("cls");
 			// "you won" screen
 			drawYouLost();
-			PlaySound(TEXT("lose.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("lose.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			SetConsoleTextAttribute(console, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 			s = "Try again.";
 			len = s.size();
@@ -468,7 +468,7 @@ void startGame(Node* plPlay, Node* plHead, int option, string options[], int col
 			system("cls");
 			// "you won" screen
 			drawYouWon();
-			PlaySound(TEXT("win.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("win.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			SetConsoleTextAttribute(console, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 			movetoPos((yMax - 40) / 2, 20);
 			cout << "Score: " << score << " point(s)";
@@ -540,7 +540,7 @@ void setupGame(Node*& plHead) {
 	cin >> plName;
 	disableEcho();
 	showCursor(false);
-	PlaySound(TEXT("hello.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//	PlaySound(TEXT("hello.wav"), NULL, SND_FILENAME | SND_ASYNC);
 	printStrPos((yMax - 40) / 2, 26, "Hello ");
 	SetConsoleTextAttribute(console, 11);
 	cout << plName;

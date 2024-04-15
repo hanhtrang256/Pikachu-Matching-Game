@@ -160,20 +160,20 @@ int makeOptions(string options[], int color[], int n, int limit, int pos, int wi
 		case KEY_UP:
 			if (option > 0) {
 				option--;
-				PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//				PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			}
 			break;
 		case KEY_DOWN:
 			if (option < limit - 1) {
 				option++;
-				PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//				PlaySound(TEXT("move.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			}
 			break;
 		default:
 			break;
 		}
 		if (ch == KEY_ENTER) {
-			PlaySound(TEXT("choose.wav"), NULL, SND_FILENAME | SND_ASYNC);
+//			PlaySound(TEXT("choose.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			break;
 		}
 	}
